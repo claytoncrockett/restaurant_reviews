@@ -1,0 +1,12 @@
+<div class="center">
+<h1>Restaurant Reviews</h1>
+<p><%= link_to 'New Review', new_review_path, {class: "btn green"} %></p>
+<% @reviews.each do |review| %>
+  <h2><%= review.title %></h2>
+  <p>Rating: <%= review.rating %>/10</p>
+  <%= link_to 'Show Review', review_path(review), {class: "btn light-blue"} %>
+  <%= link_to 'Edit Review', edit_review_path(review), {class: "btn lime"}  %>
+  <%= link_to 'Destroy Review', review, {method: :delete, class: "btn red pulse"} %>
+<% end %>
+</div>
+
